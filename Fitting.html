@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SmartMirror</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"> 
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+   <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+<style>
+table, th, td
+{
+   border: 0px;
+   /* border-spacing 적용을 위해 주석 처리 */
+   /* border-collapse: collapse; */
+}
+th, td
+{
+   padding: 0px;
+}
+th
+{
+   text-align: left;
+}
+table
+{
+   border-spacing: 0px;
+}
+table#t01
+{
+   width: 100%;
+   border-collapse: collapse;
+}
+table#t01 th
+{        
+   background-color: #f1f1c1 ;
+}
+table#t01 td
+{
+   background-color: #eee;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<div style="text-align:center">
+ <h2>Smart Mirror</h2>
+
+ <a href="default.html"><img border="0" src="images/Button(Fitting).png" "></a>
+</div>
+<hr> 
+
+
+<table id="t01">
+<tr>
+
+   <td colspan="2" align="center"><FONT SIZE="5"><b><p><span id="time"></span></p><p><span id="time2"></span></p></b></FONT></td>
+   <td colspan="2" align="center"><b>
+   날씨 API삽입 
+ <!--  <div data-role="page">
+
+    <div data-role="header">
+        <h1>Wunderground - 김태민</h1>
+    </div>
+    -->
+    <!-- /header -->
+
+ 
+
+   </b></td>
+ </tr>
+<tr>
+    <td colspan="2" align="center"><img src="images/매장 광고.jpg" width="400" height="300"></td>
+   <td colspan="2"  align="center"><h1>Information </h1>
+                   <h2>Open : 09:00 </h2>
+                   <h2>Close : 21:00 </h2>
+                   </td>
+                   </h2>
+ </tr>
+
+
+ <tr>
+   <td colspan="4"><FONT SIZE="4"><b>&nbsp;&nbsp;&nbsp;Recommend Coordination</b></FONT></td>
+   
+ </tr>
+ <tr>
+   <td align="center"><img src="images/코디1.jpg" width="200" height="300"></td>
+   <td align="center"><img src="images/코디2.jpg" width="200" height="300"></td>
+   <td align="center"><img src="images/코디3.jpg" width="200" height="300"></td>
+   <td align="center"><img src="images/코디4.png" width="200" height="300"></td>
+ </tr>
+</table>
+<script>
+var now = new Date();
+var year = now.getFullYear();
+var month = now.getMonth();
+var date = now.getDate();
+var hour = now.getHours();
+var min = now.getMinutes();
+var ampm = '';
+if(hour < 12) {
+ ampm = 'A.M';
+} else {
+ ampm = 'P.M';
+}
+var output = year + '/' + (month + 1) + '/' + date + ' ' ;
+var output2 =  (hour % 12) + ':' + min +' '+ ampm;
+document.getElementById('time').textContent = output;
+document.getElementById('time2').textContent = output2;
+</script>
+</body>
+</html>
